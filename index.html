@@ -57,9 +57,12 @@
     .exp-section-wrap { background: var(--bg2); border-radius: 24px; margin: 0 24px; }
     .exp-section-inner { max-width: 1240px; margin: 0 auto; padding: 80px 64px; }
     .exp-list { display: flex; flex-direction: column; }
-    .exp-item { display: grid; grid-template-columns: 200px 1fr; gap: 40px; padding: 36px 0; border-bottom: 1px solid var(--border); }
+    .exp-item { display: grid; grid-template-columns: 180px 1fr; gap: 0; padding: 36px 0; border-bottom: 1px solid var(--border); position: relative; }
     .exp-item:last-child { border-bottom: none; }
-    .exp-date { font-size: 0.78rem; color: var(--ink-soft); padding-top: 4px; line-height: 1.6; }
+    .exp-item::before { content: ""; position: absolute; left: 180px; top: 0; bottom: 0; width: 1px; background: var(--border); }
+    .exp-date { font-size: 0.78rem; color: var(--ink-soft); padding-top: 6px; line-height: 1.6; padding-right: 28px; position: relative; }
+    .exp-date::after { content: ""; position: absolute; right: -5px; top: 10px; width: 9px; height: 9px; border-radius: 50%; background: var(--accent); border: 2px solid var(--bg2); }
+    .exp-content { padding-left: 32px; }
     .exp-company { font-size: 0.72rem; font-weight: 500; letter-spacing: 0.1em; text-transform: uppercase; color: var(--accent-dark); margin-bottom: 6px; }
     .exp-role { font-family: 'DM Sans', sans-serif; font-weight: 500; font-size: 1.15rem; margin-bottom: 10px; letter-spacing: -0.01em; }
     .exp-desc { font-size: 0.87rem; color: var(--ink-soft); line-height: 1.8; }
@@ -192,7 +195,7 @@
     <div class="exp-list">
       <div class="exp-item reveal">
         <div class="exp-date">Sept. 2025 — Aujourd'hui</div>
-        <div>
+        <div class="exp-content">
           <div class="exp-company">Meilleurtaux</div>
           <div class="exp-role">Responsable Projets Web</div>
           <div class="exp-desc">Pilotage des projets liés à l'optimisation des parcours clients. Coordination des équipes techniques et des parties prenantes. Suivi des KPI et contribution à l'amélioration continue des solutions digitales.</div>
@@ -201,7 +204,7 @@
       </div>
       <div class="exp-item reveal">
         <div class="exp-date">Déc. 2024 — Août 2025</div>
-        <div>
+        <div class="exp-content">
           <div class="exp-company">Fondation Apprentis d'Auteuil</div>
           <div class="exp-role">Stagiaire Chef de Projet Digital</div>
           <div class="exp-desc">Refonte de site, optimisation UX, formation des équipes à Drupal. Suivi de planning, coordination interne et prestataires. Contribution à la stratégie de contenu et au reporting.</div>
@@ -210,7 +213,7 @@
       </div>
       <div class="exp-item reveal">
         <div class="exp-date">Jan. 2023 — Août 2023</div>
-        <div>
+        <div class="exp-content">
           <div class="exp-company">AVP Automobile</div>
           <div class="exp-role">Alternant Chef de Projet Web</div>
           <div class="exp-desc">Pilotage de la refonte du site web sous WordPress. Suivi opérationnel, gestion des coûts et négociation avec les prestataires pour les meilleures conditions contractuelles.</div>
